@@ -1,83 +1,74 @@
 
 # Hotel Booking Analytics
 
-## 1. Project Overview
+## Project Overview
 
-Hotel Booking Analytics is a data analytics project developed using Databricks, Python, PySpark and SQL.
+This project analyzes hotel booking data to understand booking trends, hotel performance, revenue, customer ratings, room types, booking channels and data quality.
 
-The project analyzes hotel booking data to understand booking trends, revenue performance, hotel performance, room type comparisons and data quality.
+The project uses Medallion Architecture (Bronze, Silver and Gold) to process raw booking data into clean, analysis-ready datasets.
 
-## 2. Project Objectives
+## 1. Tools and Technologies
 
-- Analyze total hotel bookings.
-- Calculate paid revenue.
-- Understand monthly booking trends.
-- Compare hotel performance.
-- Analyze room type performance.
-- Monitor data quality and rejected records.
-- Build interactive dashboards for business insights.
-
-## 3. Technologies Used
-
-- Databricks Free Edition
 - Python
-- PySpark
 - SQL
-- Databricks AI/BI Dashboards
+- Databricks
+- Delta Tables
+- Power BI
 - GitHub
 
-## 4. Data Architecture
+## 2. Project Architecture
 
-The project follows the Medallion Architecture.
+Bronze Layer → Silver Layer → Gold Layer → Power BI
 
-### Bronze Layer
-Stores the original hotel booking data.
+- Bronze: Raw booking data (1,316 records)
+- Silver: Cleaned and validated data (1,269 records)
+- Gold: Aggregated analytical tables
+- Power BI: Interactive dashboards and business insights
 
-### Silver Layer
-Cleans and transforms booking data, handling duplicate records, invalid checkout dates, negative room rates and missing values.
+## 3. Data Quality Analysis
 
-### Gold Layer
-Creates aggregated datasets for monthly booking trends, hotel performance, room type comparisons and data quality analysis.
+The project identified and handled duplicate and invalid booking records.
 
-## 5. Dashboard Components
+| Data Quality Metric | Count |
+|---|---:|
+| Total Bronze Records | 1,316 |
+| Unique Bookings | 1,290 |
+| Duplicate Records | 26 |
+| Clean Silver Records | 1,269 |
+| Rejected Records | 21 |
 
-### Data Quality Dashboard
-Includes four KPI cards:
-- Total Bronze Records: 1,316
-- Duplicate Records: 26
-- Rejected Records: 21
-- Clean Records: 1,269
+### Rejection Breakdown
 
-### Monthly Booking Trends
-Shows monthly booking counts and paid revenue trends.
+| Rejection Reason | Count |
+|---|---:|
+| Invalid Checkout Date | 12 |
+| Negative Room Rate | 9 |
+| **Total** | **21** |
 
-### Hotel Performance
-Analyzes bookings, paid revenue and average guest ratings across hotels.
+## 4. Gold-Layer Analytical Tables
 
-### Room Type Comparison
-Compares bookings, paid revenue, guest ratings and average room rates across room types.
+| Table | Purpose |
+|---|---|
+| `gold_monthly_bookings` | Monthly booking trends |
+| `gold_hotel_performance` | Hotel-wise performance |
+| `gold_city_performance` | City-wise booking and revenue |
+| `gold_channel_performance` | Booking-channel analysis |
+| `gold_room_performance` | Room-type performance |
+| `gold_data_quality` | Data-quality metrics |
 
-## 6. Business Insights
+Other summary tables are also available in the Gold layer.
 
-The dashboards help understand:
-- Which hotels receive more bookings.
-- Which hotels generate higher paid revenue.
-- How booking activity changes over time.
-- Which room types perform better.
-- How guest ratings differ across hotels and room types.
-- The quality of the booking data.
+## 5. Key Business Insights
 
-## 7. Project Files
+- Goa recorded the highest booking volume and paid revenue among cities with identified names.
+- Marine Drive Suites recorded the highest bookings and paid revenue among hotels.
+- Backwater Bay Hotel had the highest average guest rating.
+- Mobile App had the highest booking volume among booking channels.
+- Website generated the highest paid revenue among booking channels.
+- Kochi recorded the highest average guest rating among identified cities.
 
-- `README.md` – Project documentation.
-- `01_Data_Quality_Dashboard.png` – Data quality dashboard.
-- `02_Monthly_Bookings_Dashboard.png` – Monthly booking dashboard.
-- `03_Hotel_Performance_Dashboard.png` – Hotel performance dashboard.
-- `04_Room_Type_Comparison_Dashboard.png` – Room type comparison dashboard.
-- `05_Room_Type_Additional_View.png` – Additional dashboard view.
+## 6. Project Outcome
 
-## 8. Conclusion
+This project demonstrates how raw hotel booking data can be transformed into clean, structured and analysis-ready datasets using Databricks and SQL.
 
-This project demonstrates how hotel booking data can be cleaned, transformed, analyzed and presented through interactive dashboards using Databricks.
-
-It provides useful business insights into hotel operations, booking trends, revenue and data quality.
+The resulting Gold tables support business analysis and Power BI dashboards.
