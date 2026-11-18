@@ -72,19 +72,19 @@ Other summary tables are also available in the Gold layer.
 This project demonstrates how raw hotel booking data can be transformed into clean, structured and analysis-ready datasets using Databricks and SQL.
 
 The resulting Gold tables support business analysis and Power BI dashboards.
-## 7. Power BI Dashboards
+## 7. Power BI Dashboard Screenshots
 
-### 1. Data Quality Dashboard
-![Data Quality Dashboard](01_Data_Quality_Dashboard.png)
+### Data Quality Dashboard
+![Data Quality Dashboard](./01_Data_Quality_Dashboard.png)
 
-### 2. Monthly Bookings Dashboard
-![Monthly Bookings Dashboard](02_Monthly_Bookings_Dashboard.png)
+### Monthly Bookings Dashboard
+![Monthly Bookings Dashboard](./02_Monthly_Bookings_Dashboard.png)
 
-### 3. Hotel Performance Dashboard
-![Hotel Performance Dashboard](03_Hotel_Performance_Dashboard.png)
+### Hotel Performance Dashboard
+![Hotel Performance Dashboard](./03_Hotel_Performance_Dashboard.png)
 
-### 4. Room Type Comparison Dashboard
-![Room Type Comparison Dashboard](04_Room_Type_Comparison_Dashboard.png)
+### Room Type Comparison Dashboard
+![Room Type Comparison Dashboard](./04_Room_Type_Comparison_Dashboard.png)
 
-### 5. Additional Room Type Analysis
-![Additional Room Type View](05_Room_Type_Additional_View.png)
+### Additional Room Type View
+![Additional Room Type View](./05_Room_Type_Additional_View.png)
